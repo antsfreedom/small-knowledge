@@ -1,0 +1,39 @@
+input和textarea区别：
+
+input是当行文本框，其type值必须是text,初始值是用value或者placeholder来设置，size去设置字符长度，maxlength来设置最大的输入字符数。
+
+textarea是多行文本框，它是标签对，用row和col设置行和列，其内容是置于<textarea></textarea>标签对中。
+
+
+图片居中：
+
+在div中插入图片，如何让其居中？一般都会用text-align:center来设置，但是这个方式感觉比较烦，因为还要在img外在套个div，然后给这个div属性为：text-align：center。后来发现其实还有一种方式，就是直接给img设置属性。
+img{
+    margin-left:auto;
+    margin-right:auto;
+    display:block;
+}
+
+
+实现垂直居中的方式：
+  定位 position:absolute;
+1、在知道div高宽的前提下，比如高宽都是200px，可以这样写：
+ position：absolute；
+ top：50%；
+ left：50%；
+ margin-left：-100px;
+ margin-top:-100px;
+
+2、还有一种写法，这个就不会涉及到div的高宽：
+position：absolute；
+left：0；
+right：0；
+top：0；
+bottom：0；
+margin：auto；
+
+3、这个感觉是比较方便的，但是因为用到的是css3的内容，可能会涉及到兼容问题
+position：absolute；
+left：50%；
+top：50%；
+transform：translate3d(-50%,-50%,0)
